@@ -1,0 +1,50 @@
+
+
+
+
+<div
+  id="myGrid"
+  class="ag-theme-alpine"
+  style="height: 800px; width: 100%"
+></div>
+
+<script type="text/javascript" charset="utf-8">
+  const gridOptions = {
+	rowData: [],
+	getRowStyle: params => {
+		if (params.node.rowIndex % 2 === 0) {
+			return { background: '#2445fa' };
+		} else {
+			return { background: 'white' };
+		}
+	},
+	columnDefs: [
+	  { field: "athlete" },
+	  { field: "age" },
+	  { field: "country" },
+	  { field: "year" },
+	  { field: "date" },
+	  { field: "sport" },
+	  { field: "gold" },
+	  { field: "silver" },
+	  { field: "bronze" },
+	  { field: "total" },
+	],
+	defaultColDef: {
+	  sortable: true,
+	  filter: true,
+	  enableRowGroup: true
+	  // enableValue: true
+	},
+	// rowGroupPanelShow:'always'
+  };
+
+  const eGridDiv = document.querySelector("#myGrid");
+  new agGrid.Grid(eGridDiv, gridOptions);
+
+  fetch(
+	"https://www.ag-grid.com/example-assets/olympic-winners.json"
+  )
+	.then((response) => response.json())
+	.then((data) => gridOptions.api.setRowData(data));
+</script>

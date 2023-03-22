@@ -1,0 +1,53 @@
+{% load static %}
+
+
+<div class="footer-wrap">
+	<div class="footer-inner-wrap">
+		<!-- Start of _three_benefits -->
+		{% include 'partials/_cta_footer.html' %}
+		<!-- End of _three_benefits -->
+		
+		<div data-w-id="11d10631-8f8d-6209-f7be-f936f809b3bf" class="footer">
+			<div class="col-1-footer">
+				<a href="{% url 'home:home' %}" aria-current="page" class="logo-footer w-inline-block w--current"><img src="{% static 'img/imgs/logo.png' %}" loading="lazy" alt="" style="width: 50%;"class="colored-logo-footer"/></a>
+				<p class="body-02---18px regular">Get exclusive access to the most precise analytical reports and find the most profitable investment options in NFT market.</p>
+			</div>
+			<div class="col-2-footer">
+				<div class="footer-links-column">
+					<div class="footer-links-title">Nftion</div>
+					<div class="wrap-links-footer"><a href="{% url 'home:home' %}#services" class="footer-link">Services</a><a href="{% url 'home:home' %}#future_features" class="footer-link">Future Features</a><a href="{% url 'home:home' %}#ourvalues" class="footer-link">Our Values</a><a href="{% url 'home:home' %}#how_it_works" class="footer-link">How it works</a></div>
+				</div>
+				<div class="footer-links-column">
+					<div class="footer-links-title">Application</div>
+					<div class="wrap-links-footer">
+						<a href="{% url 'home:profile' %}" class="footer-link">Account</a>
+						<a href="{% url 'account_login' %}" class="footer-link">Sign In</a>
+						<a href="{% url 'account_signup' %}" class="footer-link">Sign Up</a></div>
+				</div>
+				<div class="footer-links-column">
+					<div class="footer-links-title">Other Pages</div>
+					<div class="wrap-links-footer">
+						<a href="{% url 'home:privacy-policy' %}" class="footer-link">Privacy Policy</a>
+						<a href="{% url 'home:terms_conditions' %}" class="footer-link">Terms & Conditions</a>
+						<a href="mailto:info@nftion.io" class="footer-link">Contact Us</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="copyright-section">
+		<div class="copyright-section-inner-wrap">
+			<div class="copyright-text-wrap">
+				<div class="copyright-text">© All rights reserved by <a href="/" target="_blank" class="link-conversion-flow">Nftion</a>. Designed by <a href="https://onesite.agency" target="_blank" class="link-webflow">OneSite Agency</a>.</div>
+			</div>
+			<div class="footer-social-icons-wrap">
+				<a href="https://www.linkedin.com/company/nftion/" target="_blank" class="social-icon w-inline-block">
+					<img src="{% static 'img/imgs/ln.svg' %}" loading="lazy" alt="" class="footer-social-icons-image"/>
+				</a>
+				<a href="https://t.me/nftion" target="_blank" class="social-icon w-inline-block">
+					<img src="{% static 'img/imgs/telegram.svg' %}" loading="lazy" alt="" class="footer-social-icons-image"/>
+				</a>
+				
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+.code-box-block {
+  display: inline-flex;
+  margin-right: 20px;
+}
+
+.code-box-block-button {
+  margin-left: 15px !important;
+}
+
+
+.button {
+	margin-bottom: 16px;
+	/* padding: 10px 25px; */
+	border-radius: 8px;
+	background-color: #245fff;
+	box-shadow: 0 2px 8px 0 rgb(0 0 0 / 3%);
+	-webkit-transition: box-shadow 200ms ease, color 200ms ease, background-color 200ms ease;
+	transition: box-shadow 200ms ease, color 200ms ease, background-color 200ms ease;
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.3;
+	font-weight: 700;
+	text-align: center;
+}
+
+.resend-code {
+	font-size: 13px;
+}

@@ -1,0 +1,29 @@
+{% load static %}
+
+<div style="-webkit-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="wrap-hero-content">
+	<div class="text-container-hero">
+		<!-- <div class="tag-container">
+		
+			<div class="tag">
+				<div>#nftion</div>
+			</div>
+			<div class="tag">
+				<div>#digital art</div>
+			</div>
+		
+		</div> -->
+		
+		
+		
+		<h1 class="hero-title"><span class="multicolor-heading">Analyze and Earn</span> in Web3 art!</h1>
+		<p class="hero-text">Get exclusive access to the most precise analytical reports and find the most profitable investment options in NFT market.</p>
+		{% if user.is_authenticated %}
+		<a href="{% url 'home:dashboard' %}" class="primary-button-big hero w-button">Proceed to Dashboard</a>
+		{% else %}
+		<a href="{% url 'account_signup' %}" class="primary-button-big hero w-button">Get Started - Free Try</a>
+		{% endif %}
+	</div>
+	<div class="image-container overflow">
+		<img src="{% static 'img/imgs/cards.png' %}" alt="cards">
+	</div>
+</div>

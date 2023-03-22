@@ -1,0 +1,1020 @@
+{% load static %}
+
+<style>
+	
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+	  select,
+	  textarea,
+	  input {
+		font-size: 16px;
+	  }
+	}
+	
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+	  select:focus,
+	  textarea:focus,
+	  input:focus {
+		font-size: 16px;
+	  }
+	}
+	
+	.dropdown-filter-xz{
+	height: 100%;
+	/* padding: 1rem 4rem 1rem 1.2rem; */
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(0, 1, 34, 0.16);
+	border-radius: 10px;
+	}
+	
+	.hidden{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+	
+	@media screen and (min-width: 780px) and (max-width: 1200px){
+	.dashboard-main-content {
+		min-height: 95vh;
+		padding: 40px;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: stretch;
+		-webkit-align-items: stretch;
+		-ms-flex-align: stretch;
+		align-items: stretch;
+		padding-left: 100px !important;
+	}
+}
+	
+	@media screen and (max-width: 479px){
+	.dashboard-main-content {
+		padding: 24px;
+		padding: 40px !important;
+	}
+	}
+</style>
+
+ <script src="{% static 'js/jquery.min.js' %}"></script>
+<div class="dashboard-main-content">
+<div class="container-max">
+	<div class="filter_form-wrapper w-form">
+		<form id="wf-form-filter" name="wf-form-filter" data-name="filter" method="get" fs-cmsfilter-element="filters" class="filter_form">
+			<div class="filter_wrapper wf-section">
+
+				<div class="header-block">
+					<h1 class="heading">NFTION LIST</h1>
+				</div>
+				<div class="header-block-2">
+					<div class="filter_header-1">
+						<div id="w-node-_59be48c3-1b03-5797-58a3-2ae11b67735b-16e4a488" class="filter-header-block">
+							<!-- <label id="w-node-ad4b9a9e-fa2a-22c6-74c5-8339dad09313-16e4a488" class="field-label">Select by country</label> -->
+							<div id="w-node-f74fb912-de7c-ecbd-7898-a25cbfb62d39-16e4a488" class="filter_block-header">
+								<div data-hover="false" data-delay="0" id="w-node-f74fb912-de7c-ecbd-7898-a25cbfb62e12-16e4a488" class="dropdown_select w-dropdown">
+									<div class="filter_select w-dropdown-toggle">
+										<div class="dropdown_icon w-icon-dropdown-toggle"></div>
+										<div fs-cmssort-element="dropdown-label">Select By Status</div>
+									</div>
+									<nav class="dropdown_list w-dropdown-list">
+										<div class="country-collection-wrapper w-dyn-list">
+											<div role="list" class="country-collection-list w-dyn-items">
+{% if buy_now %}
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input buy_rn w-checkbox-input--inputType-custom checkbox_input {% if 'Buy now' in check_status %}w--redirected-checked{% endif %}"></div>
+														<input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" style="opacity:0;position:absolute;z-index:-1"/><span fs-cmsfilter-tagcategory="status" fs-cmsfilter-field="status" class="checkbox_label w-form-label" for="checkbox">Buy now</span>
+														<div class="option-results">[<span fs-cmsfilter-element="filter-results-count">0</span>]</div>
+													</label>
+												</div>
+{% endif %}
+                                            {% if on_auction %}
+
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input auction w-checkbox-input--inputType-custom checkbox_input {% if 'On auction' in check_status %}w--redirected-checked{% endif %}"></div>
+														<input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" style="opacity:0;position:absolute;z-index:-1"/><span fs-cmsfilter-tagcategory="status" fs-cmsfilter-field="status" class="checkbox_label w-form-label" for="checkbox">On auction</span>
+														<div class="option-results">[<span fs-cmsfilter-element="filter-results-count">0</span>]</div>
+													</label>
+												</div>
+{% endif %}
+
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input offer_av w-checkbox-input--inputType-custom checkbox_input {% if 'Offer available' in check_status %}w--redirected-checked{% endif %}"></div>
+														<input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" style="opacity:0;position:absolute;z-index:-1"/><span fs-cmsfilter-tagcategory="status" fs-cmsfilter-field="status" class="checkbox_label w-form-label" for="checkbox">Offer available</span>
+														<div class="option-results">[<span fs-cmsfilter-element="filter-results-count">0</span>]</div>
+													</label>
+												</div>
+
+
+											</div>
+										</div>
+									</nav>
+								</div>
+								<div data-hover="false" data-delay="0" id="w-node-f74fb912-de7c-ecbd-7898-a25cbfb62e12-16e4a488" class="dropdown_select w-dropdown">
+									<div class="filter_select w-dropdown-toggle">
+										<div class="dropdown_icon w-icon-dropdown-toggle"></div>
+										<div fs-cmssort-element="dropdown-label">Select By Type</div>
+									</div>
+									<nav class="dropdown_list w-dropdown-list">
+										<div class="country-collection-wrapper w-dyn-list">
+											<div role="list" class="country-collection-list w-dyn-items">
+                                                {% for status in statuses %}
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input {% if status.name in check_type %}w--redirected-checked{% endif %}" id="{{ status.id }}"></div>
+														<input type="checkbox" class="toggle_category" id="checkbox" data-target="{{ status.name }}" name="checkbox" data-name="Checkbox" style="opacity:0;position:absolute;z-index:-1"/>
+                                                        <span fs-cmsfilter-tagcategory="type" fs-cmsfilter-field="type" class="checkbox_label w-form-label st_{{ status.id }}" for="checkbox">{{ status.name}}</span>
+														<div class="option-results">[<span fs-cmsfilter-element="filter-results-count">0</span>]</div>
+													</label>
+												</div>
+                                                {% endfor %}
+											</div>
+										</div>
+									</nav>
+								</div>
+								<div data-hover="false" data-delay="0" id="w-node-f74fb912-de7c-ecbd-7898-a25cbfb62e12-16e4a488" class="dropdown_select w-dropdown">
+									<div class="filter_select w-dropdown-toggle">
+										<div class="dropdown_icon w-icon-dropdown-toggle"></div>
+										<div fs-cmssort-element="dropdown-label">Choose Columns</div>
+									</div>
+									<nav class="dropdown_list w-dropdown-list">
+										<div class="country-collection-wrapper w-dyn-list">
+											<div role="list" class="country-collection-list w-dyn-items">
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input w--redirected-checked" id="nft_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="nft-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">NFT</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input w--redirected-checked" id="name_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="name-toggle" style="opacity:0;position:absolute;z-index:-1" checked="checked" />
+														<span class="checkbox_label w-form-label" for="checkbox">Name</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input w--redirected-checked" id="price_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="price-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Price</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input" id="type_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="type-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Type</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input" id="status_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="status-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Status</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input w--redirected-checked" id="deals-number_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="deals-number-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Deals number</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input" id="total-price_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="total-price-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Total profit</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input w--redirected-checked" id="monthly-roi_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="monthly-roi-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Monthly ROI</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input w--redirected-checked" id="last-sale-date_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="last-sale-date-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Last sale date</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input w--redirected-checked" id="favorite_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="favorite-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Favorite</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input" id="max-profit-per-sale_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="max-profit-per-sale-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Max profit per sale</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input" id="min-profit-per-sale_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="min-profit-per-sale-toggle" style="opacity:0;position:absolute;z-index:-1" checked/>
+														<span class="checkbox_label w-form-label" for="checkbox">Min profit per sale</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input" id="average-sale-duration_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="average-sale-duration-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Average sale duration</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input" id="average-hold-duration_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="average-hold-duration-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Average hold duration</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input" id="royalties_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="royalties-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Royalties</span>
+													</label>
+												</div>
+												<div role="listitem" class="country-collection-item w-dyn-item">
+													<label class="w-checkbox checkbox_field">
+														<div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox_input w--redirected-checked" id="buy_checkbox"></div>
+														<input type="checkbox" class='toggleColumns' id="checkbox" name="checkbox" data-name="Checkbox" data-target="buy-toggle" style="opacity:0;position:absolute;z-index:-1"/>
+														<span class="checkbox_label w-form-label" for="checkbox">Buy</span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</nav>
+								</div>
+								
+
+								<select id="filter_selector" class="filter_range-field w-input dropdown-filter-xz dropdown_select w-dropdown">
+									<div class="dropdown_icon w-icon-dropdown-toggle" aria-hidden="true"></div>
+									 <option value="choose-range" id="choosing_range" class="country-collection-list w-dyn-items" selected>Choose Range</option>
+									 <option id="deals_range" {% if deals_range %}selected{% endif %} value="deals-range" class="country-collection-list w-dyn-items">Deals Range</option>
+									 <option id="price_range" {% if price_range %}selected{% endif %} value="price-range" class="country-collection-list w-dyn-items">Price Range ($USD)</option>
+								  </select>
+								  
+								<style>
+									#filter_selector {
+									  -webkit-appearance: none;
+									  -moz-appearance: none;
+									  appearance: none;
+									  /* Add some styling */
+									  
+									  /* display: block;
+									  width: 100%;
+									  max-width: 320px;
+									  height: 50px;
+									  float: right;
+									  /* margin: 5px 0px; */
+									  padding: 0px 24px;
+									  /* font-size: 16px;
+									  line-height: 1.75;
+									  color: #333;
+									  background-color: #ffffff;
+									  background-image: none; */
+									  /* border: 1px solid #0ebeff; */
+									  /* -ms-word-break: normal;
+									  word-break: normal; */
+									  
+									  
+									  #filter_selector:after {
+										  content: '\f078';
+										  font: normal normal normal 17px/1 FontAwesome;
+										  color: #0ebeff;
+										  right: 11px;
+										  top: 6px;
+										  height: 34px;
+										  padding: 15px 0px 0px 8px;
+										  border-left: 1px solid #0ebeff;
+										  position: absolute;
+										  pointer-events: none;
+									  }
+									  
+									  #filter_selector:after {
+											content: '\f078';
+											font: normal normal normal 17px/1 FontAwesome;
+											color: #0ebeff;
+											right: 11px;
+											top: 6px;
+											height: 34px;
+											padding: 15px 0px 0px 8px;
+											border-left: 1px solid #0ebeff;
+											position: absolute;
+											pointer-events: none;
+										}
+										
+								.button-select-filter {
+									width: 100%;
+								}
+								</style>
+
+                                <input type="number" class="filter_range-field w-input input_max_min {% if not price_range and not deals_range %}hidden{% endif %}" id="min_num" value="{% if min_value %}{{ min_value }}{% endif %}"  maxlength="256" name="field"  data-name="Field"  placeholder="Min"/>
+								<input type="number" class="filter_range-field w-input input_max_min {% if not price_range and not deals_range %}hidden{% endif %}" id="max_num" value="{% if max_value != 'inf' and max_value %}{{ max_value }}{% endif %}"  maxlength="256" name="field" onchange="on_input_change()" data-name="Field"  placeholder="Max"/>
+
+							
+							
+							</div>
+						</div>
+						<div id="w-node-b6c1d54a-cb18-8572-02ac-4bcad0db68d3-16e4a488" class="filter-header-block">
+							<div id="w-node-_3d5c5fef-97b1-1ee8-b997-861f91b4d372-16e4a488" class="filter_block-header-2">
+								<input class="button-select-filter filter_select w-dropdown-toggle" type="submit" id="apply_filters" value="Apply filters">
+								<style>
+								.button-select-filter {
+									width: 100%;
+								}
+								</style>
+								<input class="button-select-filter filter_select w-dropdown-toggle" type="submit" id="reset_filters" value="Reset filters">
+								<style>
+								.button-select-filter {
+									width: 100%;
+								}
+								
+								a {
+									-webkit-transition: color 200ms ease;
+									transition: color 200ms ease;
+									color: #000000 !important;
+									text-decoration: none;
+								}
+								</style>
+							</div>
+							
+						</div>
+						
+
+
+					</div>
+					<div class="filter_header-2">
+						<div class="filter_block _2">
+							<div class="filter_results-text">Showing <span class="text-color-green curr_elems">0</span> results of <span class="text-span">{{ total_nft_count }}</span> items.</div>
+							<div class="hide">
+								<div class="fs-cmsfilter_highlight">highlight</div>
+							</div>
+							<div class="divider"></div>
+						</div>
+						<div class="filter_tags-wrapper">
+							<div class="filter_tags-text">Filtering by:</div>
+
+                            {% for status in check_status %}
+							    <div  class="filter_tag" style="opacity: 1;"><div class="filter_tag-text">status: {{ status }}</div><img data-status="{{ status }}" src="https://assets.website-files.com/61eeb6a45ec3ba54e0e4a487/61eec36883107b935b7f675e_close.svg" loading="lazy" fs-cmsfilter-element="tag-remove" alt="close icon
+									" class="filter_tag-remove status_filter"/></div>
+						    {% endfor %}
+                            {% for type in check_type %}
+							    <div  class="filter_tag" style="opacity: 1;"><div class="filter_tag-text">type: {{ type }}</div><img data-type="{{ type }}" src="https://assets.website-files.com/61eeb6a45ec3ba54e0e4a487/61eec36883107b935b7f675e_close.svg" loading="lazy" fs-cmsfilter-element="tag-remove" alt="close icon
+									" class="filter_tag-remove type_filter"/></div>
+						    {% endfor %}
+                        {% load price_deal_range %}
+                        {% if deals_range %}
+							    <div  class="filter_tag" style="opacity: 1;"><div class="filter_tag-text">deals range: {% price_deal_range deals_range 'deals' %}</div><img id="deals_range_filter" src="https://assets.website-files.com/61eeb6a45ec3ba54e0e4a487/61eec36883107b935b7f675e_close.svg" loading="lazy" fs-cmsfilter-element="tag-remove" alt="close icon
+									" class="filter_tag-remove"/></div>
+                        {% endif %}
+                        {% if price_range %}
+							    <div  class="filter_tag" style="opacity: 1;"><div class="filter_tag-text">price range: {% price_deal_range price_range 'price' %}</div><img id="price_range_filter" src="https://assets.website-files.com/61eeb6a45ec3ba54e0e4a487/61eec36883107b935b7f675e_close.svg" loading="lazy" fs-cmsfilter-element="tag-remove" alt="close icon
+									" class="filter_tag-remove"/></div>
+                        {% endif %}
+
+                        </div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="w-form-done">
+			<div>Thank you! Your submission has been received!</div>
+		</div>
+		<div class="w-form-fail">
+			<div>Oops! Something went wrong while submitting the form.</div>
+		</div>
+	</div>
+	<div class="table-wrapper" style="overflow: hidden">
+
+		<div class="table-container">
+			<div class="table-data-wrapper">
+				<div class="scroll-container">
+					<div class="scroll-table-content">
+						<div class="collection-list-wrapper w-dyn-list">
+
+	<div class="table-row header" id="main-table-xz">
+    <div class="table-heading favorite-toggle"><a></a></div>
+			<div class="table-heading nft-toggle" >NFT</div>
+			<div class="table-heading name-toggle"><a>Name</a>
+                {% if direction == 'asc' and order_by == 'name' %}<a href="?order_by=name&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'name' %}<a href="?order_by=name&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'name' %}<a href="?order_by=name&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+			<div class="table-heading price-toggle"><a>Price</a>
+                {% if direction == 'asc' and order_by == 'price' %}<a href="?order_by=price&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'price' %}<a href="?order_by=price&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'price' %}<a href="?order_by=price&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+			<div class="table-heading type-toggle"><a>Type</a>
+                 {% if direction == 'asc' and order_by == 'nft_type' %}<a href="?order_by=nft_type&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'nft_type' %}<a href="?order_by=nft_type&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'nft_type' %}<a href="?order_by=nft_type&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+			<div class="table-heading status-toggle"><a>Status</a>
+                      {% if direction == 'asc' and order_by == 'status' %}<a href="?order_by=status&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'status' %}<a href="?order_by=status&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'status' %}<a href="?order_by=status&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+			<div class="table-heading deals-number-toggle"><a>Deals number</a>
+                   {% if direction == 'asc' and order_by == 'deals_number' %}<a href="?order_by=deals_number&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'deals_number' %}<a href="?order_by=deals_number&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'deals_number' %}<a href="?order_by=deals_number&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+			<div class="table-heading total-price-toggle"><a>Total profit</a>
+                       {% if direction == 'asc' and order_by == 'total_profit' %}<a href="?order_by=total_profit&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'total_profit' %}<a href="?order_by=total_profit&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'total_profit' %}<a href="?order_by=total_profit&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+			<div class="table-heading monthly-roi-toggle"><a>Monthly ROI</a>
+                      {% if direction == 'asc' and order_by == 'monthly_roi' %}<a href="?order_by=monthly_roi&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'monthly_roi' %}<a href="?order_by=monthly_roi&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'monthly_roi' %}<a href="?order_by=monthly_roi&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+			<div class="table-heading last-sale-date-toggle"><a>Last sale date</a>
+                  {% if direction == 'asc' and order_by == 'last_sale_date' %}<a href="?order_by=last_sale_date&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'last_sale_date' %}<a href="?order_by=last_sale_date&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'last_sale_date' %}<a href="?order_by=last_sale_date&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+
+			<div class="table-heading max-profit-per-sale-toggle" ><a>Max profit per sale</a>
+                        {% if direction == 'asc' and order_by == 'max_profit_per_sale' %}<a href="?order_by=max_profit_per_sale&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'max_profit_per_sale' %}<a href="?order_by=max_profit_per_sale&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'max_profit_per_sale' %}<a href="?order_by=max_profit_per_sale&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+			<div class="table-heading min-profit-per-sale-toggle"><a>Min profit per sale</a>
+                          {% if direction == 'asc' and order_by == 'min_profit_sale' %}<a href="?order_by=min_profit_sale&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'min_profit_sale' %}<a href="?order_by=min_profit_sale&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'min_profit_sale' %}<a href="?order_by=min_profit_sale&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+			<div class="table-heading average-sale-duration-toggle"><a>Average sale duration</a>
+                         {% if direction == 'asc' and order_by == 'average_sale_duration' %}<a href="?order_by=average_sale_duration&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'average_sale_duration' %}<a href="?order_by=average_sale_duration&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'average_sale_duration' %}<a href="?order_by=average_sale_duration&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+			<div class="table-heading average-hold-duration-toggle"><a>Average hold duration</a>
+                         {% if direction == 'asc' and order_by == 'average_hold_duration' %}<a href="?order_by=average_hold_duration&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'average_hold_duration' %}<a href="?order_by=average_hold_duration&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'average_hold_duration' %}<a href="?order_by=average_hold_duration&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            </div>
+        <div class="table-heading royalties-toggle"><a>Royalties</a>
+                   {% if direction == 'asc' and order_by == 'royalty' %}<a href="?order_by=royalty&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-up"></div></a>{% endif %}
+                {% if direction == 'desc' and order_by == 'royalty' %}<a href="?order_by=royalty&direction=asc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+            {% if direction != 'asc' and direction != 'desc' or order_by != 'royalty' %}<a href="?order_by=royalty&direction=desc{% if deals_range %}&deals_range={{ deals_range }}{% endif %}{% if price_range %}&price_range={{ price_range }}{% endif %}{% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}"><div class="arrow-down"></div></a>{% endif %}
+        </div>
+			<div class="table-heading buy-toggle"><a>Buy</a></div>
+		</div>
+
+							<div fs-cmssort-element="list" style="height: 55vh; overflow-y: scroll" id="infinite_container" fs-cmsfilter-element="list" fs-cmsload-element="list" fs-cmsfilter-tagformat="category" role="list" class="collection-list-2 w-dyn-items infinite-container">
+
+                                {% for nft in page_obj %}
+
+
+                                <div fs-cmsfilter-showquery="true" role="listitem" class="collection-item w-dyn-item infinite-item">
+									<div class="table-row">
+
+										<div class="table-data favorite-star favorite_to_check favorite-toggle">
+											<div class="star {% if nft in wishlist %}love-it{% endif %}">
+											  <span class="circle"></span>
+											  <span class="star-parts" id="{{ nft.id }}_star"></span>
+											  <span class="star-parts" id="{{ nft.id }}_star"></span>
+											  <span class="star-parts" id="{{ nft.id }}_star"></span>
+											  <span class="star-parts" id="{{ nft.id }}_star"></span>
+											  <span class="star-parts" id="{{ nft.id }}_star"></span>
+											  <span class="specks"></span>
+											</div>
+										</div>
+										<div class="table-box nft-toggle nft_to_check">
+											<img src="{{ nft.img_link }}" width="20" height="32" alt="Jason Pfannerstill" sizes="32px" class="team-member-image"/>
+										</div>
+										<div class="table-box name-toggle nft_name_to_check">
+											<div fs-cmssort-field="name" class="table-data name">{{ nft.name|truncatechars:17 }}</div>
+										</div>
+
+
+
+
+										<div class="collection-list-wrapper-2 w-dyn-list price-toggle price_to_check">
+											<div role="list" class="collection-list-3 w-dyn-items">
+												<div role="listitem" class="collection-item-2 w-dyn-item">
+													<div fs-cmsfilter-field="price" class="table-data">{{ nft.price }}$</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="collection-list-wrapper-2 w-dyn-list type-toggle type_to_check">
+											<div role="list" class="collection-list-3 w-dyn-items">
+												<div role="listitem" class="collection-item-2 w-dyn-item">
+													<div fs-cmsfilter-field="type" class="table-data">{{ nft.nft_type }}</div>
+												</div>
+											</div>
+										</div>
+										<div class="collection-list-wrapper-2 w-dyn-list status-toggle status_to_check">
+											<div role="list" class="collection-list-3 w-dyn-items">
+												<div role="listitem" class="collection-item-2 w-dyn-item">
+													<div fs-cmsfilter-field="status" class="table-data">{{ nft.status }}</div>
+												</div>
+											</div>
+										</div>{% load humanize_date %}
+										<div class="table-data deals-number-toggle deals_number_to_check">{{ nft.deals_number }}</div>
+										<div class="table-data total-price-toggle total_profit_to_check">{{ nft.total_profit}}%</div>
+										<div class="table-data monthly-roi-toggle roi_to_check">{{ nft.monthly_roi }}%</div>
+										<div class="table-data last-sale-date-toggle last_sale_to_check">{{ nft.last_sale_date|date:"M d, Y" }}</div>
+										<div class="table-data max-profit-per-sale-toggle max_profit_to_check">{{ nft.max_profit_per_sale }}%</div>
+										<div class="table-data min-profit-per-sale-toggle min_profit_to_check" >{{ nft.min_profit_sale }}%</div>
+										<div class="table-data average-sale-duration-toggle avg_sale_to_check">{% humanize_date nft.average_sale_duration %}</div>
+										<div class="collection-list-wrapper-2 w-dyn-list average-hold-duration-toggle avg_hold_to_check">
+											<div role="list" class="collection-list-3 w-dyn-items">
+												<div role="listitem" class="collection-item-2 w-dyn-item">
+													<div fs-cmsfilter-field="country" class="table-data">{% humanize_date nft.average_hold_duration %}</div>
+												</div>
+											</div>
+										</div>
+										<div class="table-data royalties-toggle royalty_to_check">{{ nft.royalty }}%</div>
+										<a target="_blank" href="{{ nft.buy_link }}" class="button-buy-table w-button buy-toggle buy_to_check">Buy</a>
+									</div>
+
+
+
+
+								</div>
+                                 {% endfor %}
+                            {% csrf_token %}
+                            {% if page_obj.has_next %}
+                            <a class="infinite-more-link" href="?{% if order_by %}order_by={{ order_by }}{% endif %}{% if direction %}
+                            &direction={{ direction }}{% endif %}{% if deals_range %}&deals_range={{ deals_range }}{% endif %}
+                            {% if price_range %}&price_range={{ price_range }}{% endif %}
+            {% if nft_status %}&nft_status={{ nft_status }}{% endif %}{% if nft_type %}&nft_type={{ nft_type }}{% endif %}
+                            &page={{ page_obj.next_page_number }}"></a>
+
+                            {% endif %}
+
+{#              ITEM END                  #}
+
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+{#<script src="{% static 'dashboard_extras/js/wp/src/waypoint.js' %}"></script>#}
+<script src="{% static 'dashboard_extras/js/jquery.waypoints.js' %}"></script>
+<script src="{% static 'dashboard_extras/js/infinite.min.js' %}"></script>
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/infinite.js"></script>#}
+
+<script>
+    $( document ).ready(function (){
+
+        count_nft()
+
+        let class_to_have = "w--redirected-checked"
+
+
+        let columns = document.getElementsByClassName('toggleColumns')
+        for (let z=0; z<columns.length; z++){
+            let data_target = columns[z].getAttribute('data-target')
+            let id_target = data_target.replace('-toggle', '')
+            let lcl_data = localStorage.getItem(data_target)
+            if (lcl_data === 'true') {
+                $('#'+id_target+'_checkbox').addClass(class_to_have)
+            }
+            else if (lcl_data === 'false'){
+                $('.'+data_target).toggle()
+                $('#'+id_target+'_checkbox').removeClass(class_to_have)
+            }
+        }
+
+
+    save_toggled()
+
+
+    })
+var div1 = $('#main-table-xz');
+var div2 = $('#infinite_container');
+var input = document.getElementById("max_num");
+
+input.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("apply_filters").click();
+  }
+});
+
+$('#filter_selector').on('change', function() {
+    if (this.value !== 'choose-range'){
+        $('.input_max_min').removeClass('hidden')
+        if (this.value === 'deals-range'){
+            let loc = window.location
+            let deals = ''
+            let nft_type = loc.href.split('&')
+        for (let x = 0; x < nft_type.length; x++){
+            if (nft_type[x].includes('deals_range')){
+                deals = nft_type[x].replace('deals_range=', '')
+            }
+        }
+
+
+            if (deals.length < 1){
+                $('#max_num').val(0)
+                $('#min_num').val(0)
+            }
+            else{
+                let nums = deals.split('_')
+                $('#max_num').val(nums[1])
+                $('#min_num').val(nums[0])
+            }
+
+        }
+        else if (this.value === 'price-range'){
+             let loc = window.location
+            let deals = ''
+            let nft_type = loc.href.split('&')
+        for (let x = 0; x < nft_type.length; x++){
+            if (nft_type[x].includes('price_range')){
+                deals = nft_type[x].replace('price_range=', '')
+            }
+        }
+
+
+            if (deals.length < 1){
+                $('#max_num').val(0)
+                $('#min_num').val(0)
+            }
+            else{
+                let nums = deals.split('_')
+                $('#max_num').val(nums[1])
+                $('#min_num').val(nums[0])
+            }
+        }
+    }
+    else{
+        $('#max_num').val(0)
+        $('#min_num').val(0)
+        $('.input_max_min').addClass('hidden')
+    }
+});
+
+    $('.status_filter').click(function (event){
+        let data_status = $(event.target).attr('data-status').replace(' ', '-')
+        let loc = window.location
+        let nft_status = loc.href.split('&')
+    //.slice(-1)[0].replace(data_status, '').replace('nft_status=', '')
+
+        if (nft_status.slice(-1)[0].includes('nft_type')){
+            nft_status = nft_status.slice(-2)[0].replace(data_status, '').replace('nft_status=', '')
+        }
+        else{
+            nft_status = nft_status.slice(-1)[0].replace(data_status, '').replace('nft_status=', '')
+        }
+
+
+        if (nft_status.length -2 === nft_status.replaceAll('_', '').length){
+
+            if (nft_status.slice(0) === '_' ){
+
+                nft_status = nft_status.replace('_', '')
+            }
+            else if(nft_status.slice(-1) === '_'){
+
+                nft_status = nft_status.substring(0, nft_status.length-1)
+            }
+            else{
+                    nft_status = nft_status.replace('_', '')
+            }
+
+        }
+        else{
+            nft_status = nft_status.replace('_', '')
+        }
+        let order_by = {% if order_by %}'order_by={{ order_by }}'{% else %}""{% endif %}
+        let direction =  {% if direction %}'&direction={{ direction }}'{% else %}""{% endif %}
+        let deals_range = {% if deals_range %}'&deals_range={{ deals_range }}'{% else %}""{% endif %}
+        let price_range = {% if price_range %}'&price_range={{ price_range }}'{% else %}""{% endif %}
+        let type_url = '&nft_type='
+        {% for status in statuses %}
+            if ($('#{{ status.id }}').hasClass('w--redirected-checked')){
+                type_url += $('.st_{{ status.id }}').text().replace(' ', '-') + '_'
+        }
+        {% endfor %}
+
+        type_url = type_url.slice(0, -1)
+        let final_url = loc.protocol + '//' + loc.host + loc.pathname + '?' + order_by + direction + deals_range + price_range
+        if (nft_status){
+        final_url += '&nft_status='+nft_status
+        }
+            {% if check_type %}
+        final_url += type_url
+        {% endif %}
+         window.location = final_url
+
+
+    })
+    $('.type_filter').click(function (event){
+        let data_type = $(event.target).attr('data-type').replace(' ', '-')
+        let loc = window.location
+        let nft_type = loc.href.split('&')
+         nft_type = nft_type.slice(-1)[0].replace(data_type, '').replace('nft_type=', '')
+        nft_type = nft_type.replace('__', '_')
+        if (nft_type.slice(-1) === '_'){
+            nft_type = nft_type.substring(0, nft_type.length-1)
+        }
+        if (nft_type.charAt(0) === '_'){
+            nft_type = nft_type.replace('_', '')
+        }
+
+        let order_by = {% if order_by %}'order_by={{ order_by }}'{% else %}""{% endif %}
+        let direction =  {% if direction %}'&direction={{ direction }}'{% else %}""{% endif %}
+        let deals_range = {% if deals_range %}'&deals_range={{ deals_range }}'{% else %}""{% endif %}
+        let price_range = {% if price_range %}'&price_range={{ price_range }}'{% else %}""{% endif %}
+        let nft_status = {% if nft_status %}'&nft_status={{ nft_status }}'{% else %}""{% endif %}
+
+        let final_url = loc.protocol + '//' + loc.host + loc.pathname + '?' + order_by + direction + deals_range + price_range + nft_status
+        if (nft_type){
+            final_url += '&nft_type='+nft_type
+        }
+
+        window.location = final_url
+    })
+    $('#deals_range_filter').click(function (){
+        let loc = window.location
+        let nft_type = loc.href.split('&')
+        for (let x = 0; x < nft_type.length; x++){
+            if (nft_type[x].includes('deals_range')){
+                nft_type.splice(x, 1)
+            }
+        }
+        window.location = nft_type.join('&')
+    })
+
+    $('#price_range_filter').click(function (){
+            let loc = window.location
+        let nft_type = loc.href.split('&')
+        for (let x = 0; x < nft_type.length; x++){
+            if (nft_type[x].includes('price_range')){
+                nft_type.splice(x, 1)
+            }
+        }
+        window.location = nft_type.join('&')
+    })
+
+
+div2.scroll(function() {
+    div1.scrollLeft($(this).scrollLeft());
+ });
+
+    function count_nft(){
+        let items = $('.infinite-item').length
+        $('.curr_elems').text(items)
+    }
+    $('#apply_filters').click(function (){
+        let statuses = [$('.buy_rn'), $('.offer_av'),$('.auction')]
+        let loc = window.location;
+        let order_by = {% if order_by %}'order_by={{ order_by }}'{% else %}""{% endif %}
+        let direction =  {% if direction %}'&direction={{ direction }}'{% else %}""{% endif %}
+        let deals_range = {% if deals_range %}'&deals_range={{ deals_range }}'{% else %}""{% endif %}
+        let price_range = {% if price_range %}'&price_range={{ price_range }}'{% else %}""{% endif %}
+
+        let final_url = loc.protocol + '//' + loc.host + loc.pathname + '?' + order_by + direction
+
+        let type_url = '&nft_type='
+        {% for status in statuses %}
+            if ($('#{{ status.id }}').hasClass('w--redirected-checked')){
+                type_url += $('.st_{{ status.id }}').text().replace(' ', '-') + '_'
+        }
+        {% endfor %}
+        type_url = type_url.slice(0, -1)
+        let status_url = '&nft_status='
+        for (let x=0; x<statuses.length; x++){
+            if (statuses[x].hasClass('w--redirected-checked')){
+                status_url += statuses[x].siblings('span').text().replace(' ', '-') + '_'
+            }
+        }
+        status_url = status_url.slice(0, -1)
+
+        let option_selected = $('#filter_selector option:selected').val()
+        let deals_range_url = ''
+        let price_range_url = ''
+        let minimum_val = parseInt($('#min_num').val())
+        let maximum_val = parseInt($('#max_num').val())
+
+        if (option_selected !== 'choose-range'
+            && (
+                ((minimum_val>-1 && minimum_val<maximum_val && !isNaN(maximum_val))
+                && (maximum_val>-1 && maximum_val>minimum_val && !isNaN(minimum_val)))
+                ||
+                (
+                    (minimum_val>-1 && isNaN(maximum_val)) || (maximum_val>-1 && isNaN(minimum_val))
+            )
+            )
+        )
+
+        {
+
+        if (isNaN(maximum_val)){
+            maximum_val = 'inf'
+        }
+        if (isNaN(minimum_val)){
+            minimum_val = 'inf'
+        }
+            let flag_deals = false
+            let flag_price = false
+            if (option_selected === 'deals-range'){
+                deals_range_url += '&deals_range='+minimum_val+'_'+maximum_val
+                flag_deals = true
+                final_url += deals_range_url
+            }
+            if (option_selected === 'price-range'){
+                price_range_url += '&price_range='+minimum_val+'_'+maximum_val
+                flag_price = true
+                final_url += price_range_url
+            }
+            if (flag_deals !== true){
+                final_url += deals_range
+            }
+            if (flag_price !== true){
+                final_url += price_range
+            }
+        }
+
+        if (status_url.length > 12){
+            final_url += status_url
+        }
+         if (type_url.length > 10){
+            final_url += type_url
+        }
+         {#console.log(final_url)#}
+        window.location = final_url
+    })
+
+    $('#reset_filters').click(function (){
+        let loc = window.location
+        let final_url = loc.protocol + '//' + loc.host + loc.pathname
+          window.location = final_url
+    })
+    function save_toggled(){
+            let toggle_s = [
+		        'max-profit-per-sale-toggle', 'min-profit-per-sale-toggle',
+                'average-sale-duration-toggle', 'average-hold-duration-toggle',
+                'royalties-toggle', 'type-toggle',
+                'status-toggle', 'total-price-toggle'
+            ]
+		$('.toggleColumns').prop('checked', true);
+	  	$('.toggleColumns').on('change', function (e) {
+			// get the target for this checkbox and toggle it
+			let tableColumn = $(e.currentTarget).data('target');
+			if (localStorage.getItem(tableColumn)) {
+                if (localStorage.getItem(tableColumn) === 'true') {
+                    localStorage.setItem(tableColumn, 'false')
+                }
+                else if (localStorage.getItem(tableColumn) === 'false')
+                    {
+                    localStorage.setItem(tableColumn, 'true')
+                }
+            }
+			else{
+			    if (toggle_s.includes(tableColumn)){
+
+                        localStorage.setItem(tableColumn, 'true')
+                }
+			    else{
+			        localStorage.setItem(tableColumn, 'false')
+                }
+            }
+	  	 });
+
+    }
+    function set_visibility_toggle(){
+        let ids_elements = [$('.nft_to_check'), $('.nft_name_to_check'), $('.price_to_check'), $('.type_to_check'),
+            $('.status_to_check'), $('.deals_number_to_check'), $('.total_profit_to_check'),
+            $('.roi_to_check'), $('.last_sale_to_check'), $('.favorite_to_check'), $('.max_profit_to_check'),
+            $('.min_profit_to_check'), $('.avg_sale_to_check'), $('.avg_hold_to_check'), $('.royalty_to_check'), $('.buy_to_check')]
+        let dict = []
+        let class_to_have = "w--redirected-checked"
+        let ids_checkers = [$('#nft_checkbox'), $('#name_checkbox'), $('#price_checkbox'), $('#type_checkbox'),
+            $('#status_checkbox'), $('#deals-number_checkbox'), $('#total-price_checkbox'),
+            $('#monthly-roi_checkbox'), $('#last-sale-date_checkbox'), $('#favorite_checkbox'), $('#max-profit-per-sale_checkbox'),
+            $('#min-profit-per-sale_checkbox'), $('#average-sale-duration_checkbox'), $('#average-hold-duration_checkbox'), $('#royalties_checkbox'), $('#buy_checkbox')]
+
+
+        for (let x=0;x<ids_checkers.length; x++) {
+            let has_class = ids_checkers[x].hasClass(class_to_have)
+
+
+            dict.push(
+                {
+                    key: x,
+                    value: ids_checkers[x].hasClass(class_to_have)
+                }
+            )
+
+        }
+
+        for (let c=0;c<ids_elements.length;c++){
+            if (dict[c].value === true){
+                ids_elements[c].css("display", "block");
+            }
+            else if (dict[c].value === false){
+                ids_elements[c].css("display", "none");
+            }
+        }
+
+    }
+
+    var infinite = new Waypoint.Infinite({
+            element: $('.infinite-container')[0],
+            context: $('.infinite-container'),
+            offset: '-475vh',
+
+            onBeforePageLoad: function () {
+            },
+            onAfterPageLoad: function (elements) {
+                count_nft();
+                set_visibility_toggle()
+
+            }
+
+         });
+
+    $('.infinite-container').on('mouseover mouseout', function (){
+
+
+    $('.favorite-star').off('click').on('click', function (event){
+        let ajax_ready = event.target.id.slice(0, -5)
+        if ($('#'+event.target.id).parent().hasClass('love-it')){
+               $.ajax({
+            url: "{% url 'home:remove_from_favorite' 1 %}".replace('1', ajax_ready),
+            type: 'POST',
+            data:{
+                csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val()
+            },
+            success: function (response){
+                if (response.success === true) {
+                    $('#'+event.target.id).parent().removeClass('love-it')
+                }            }
+
+         })
+         }
+        else{
+        $.ajax({
+            url: "{% url 'home:add_to_favorite' 1 %}".replace('1', ajax_ready),
+            type: 'POST',
+            data:{
+                csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val()
+            },
+            success: function (response){
+                if (response.success === true) {
+                    $('#'+event.target.id).parent().addClass('love-it')
+                }            }
+
+        })
+         }
+    })
+
+
+
+        })
+
+    function set_values_and_check(){
+    }
+
+    function on_input_change(){
+        setTimeout(() => { set_values_and_check() }, 2000);
+    }
+</script>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3616px" height="925px" viewBox="0 0 3616 925" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 46</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#2118BA" offset="0%"></stop>
+            <stop stop-color="#9381E9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M628.212499,670.722499 L499.930873,542.440873 C478.452984,520.96109 443.62891,520.96109 422.150074,542.439926 C422.149758,542.440242 422.149443,542.440557 422.150074,542.44182 L293.056591,671.541587 C272.390104,692.20908 238.883893,692.215085 218.21,671.555 C197.544384,650.903186 197.533194,617.408791 218.185008,596.743175 C218.188868,596.739312 218.19273,596.735449 218.196591,596.731587 L386.19,428.73 C386.195523,428.724477 386.195523,428.715523 386.19,428.71 C386.184477,428.704477 386.184477,428.695523 386.19,428.69 L423.6,391.28 C444.266495,370.613505 477.773505,370.613505 498.44,391.28 L703.062499,595.902499 C723.723473,616.563473 723.723473,650.061529 703.062499,670.722502 C703.06,670.725002 703.0575,670.727501 703.055,670.73 C682.38453,691.392185 648.878827,691.388827 628.212499,670.722499 Z" id="path-3"></path>
+        <filter x="-2.1%" y="-2.7%" width="104.1%" height="106.5%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M705.163774,534.921614 L500.764242,326.578028 C479.491622,304.894936 444.669138,304.562183 422.986047,325.834802 C422.837787,325.980255 422.690352,326.126547 422.543749,326.273671 L214.45193,535.104875 C194.702249,554.92473 163.220073,556.758423 141.302916,539.365471 L134.940617,534.316497 C112.862603,516.795893 109.168092,484.69487 126.688696,462.616856 C127.900473,461.089874 129.198746,459.633578 130.577131,458.255126 L362.554374,226.26659 C362.561699,226.259264 362.561699,226.247387 362.554373,226.240062 C362.547048,226.232737 362.547048,226.22086 362.554373,226.213534 L422.917035,165.850873 C444.395871,144.372037 479.219945,144.372037 500.698781,165.850873 L790.839199,455.991291 C811.132084,476.284176 811.132084,509.185442 790.839199,529.478327 C789.310252,531.007274 787.687364,532.439297 785.98,533.766046 L778.172178,539.833304 C756.118842,556.970384 724.722953,554.858204 705.163774,534.921614 Z" id="path-6"></path>
+        <filter x="-1.5%" y="-2.1%" width="103.1%" height="105.2%" filterUnits="objectBoundingBox" id="filter-7">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-8">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M537.691717,640.842649 L499.443547,603.723065 C478.379584,583.280634 444.80691,583.530863 424.05,604.285 L386.63,641.7 L327.08,701.25 C313.459101,714.870899 313.459101,736.95474 327.08,750.57564 C333.621868,757.117508 342.494819,760.792268 351.746417,760.791314 L571.972369,760.7686 C591.311998,760.766606 606.988248,745.087122 606.986254,725.747493 C606.985308,716.578523 603.388165,707.77568 596.967567,701.23 L539.437179,642.578838 C538.862505,641.992968 538.28064,641.414195 537.691717,640.842649 Z" id="path-9"></path>
+        <filter x="-3.0%" y="-4.9%" width="105.9%" height="111.9%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-11">
+            <stop stop-color="#2218BA" offset="0%"></stop>
+            <stop stop-color="#9281E9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-45">
+            <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="925" height="925" rx="209"></rect>
+            <g id="Path" fill-rule="nonzero">
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                <use fill="url(#linearGradient-2)" xlink:href="#path-3"></use>
+            </g>
+            <g id="Path" fill-rule="nonzero">
+                <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-6"></use>
+                <use fill="url(#linearGradient-5)" xlink:href="#path-6"></use>
+            </g>
+            <g id="Path" fill-rule="nonzero">
+                <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                <use fill="url(#linearGradient-8)" xlink:href="#path-9"></use>
+            </g>
+            <text id="NFTION" fill="url(#linearGradient-11)" fill-rule="nonzero" style="mix-blend-mode: color-burn;" font-family="PointPanther-Regular, Point Panther" font-size="476" font-weight="normal" letter-spacing="69.3203883">
+                <tspan x="1227.39683" y="559">NFTION</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

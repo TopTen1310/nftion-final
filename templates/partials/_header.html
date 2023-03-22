@@ -1,0 +1,38 @@
+{% load static %}
+<div class="header">
+	<div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+		<div class="navbar-container w-container">
+			<a href="/" aria-current="page" class="brand w-nav-brand w--current"><img src="{% static 'img/imgs/logo.png' %}" loading="lazy" alt="" style="width: 50%;"class="logo-main-image"/>
+			</a>
+			<nav role="navigation" class="nav-menu w-nav-menu">
+				<a href="#services" class="nav-link w-nav-link">Services</a>
+				<!-- <a href="#our_features" class="nav-link w-nav-link">Features</a> -->
+				<a href="#future_features" class="nav-link w-nav-link">Future Features</a>
+				<a href="#ourvalues" class="nav-link w-nav-link">Our Values</a>
+				<a href="#how_it_works" class="nav-link w-nav-link">How it works</a>
+				<div class="wrap-cta-buttons mobile">
+					<a href="{% url 'account_login' %}" class="sign-in-btn w-button">Sign in</a>
+					<a href="{% url 'account_signup' %}" target="_blank" class="primary-button-medium cta mobile w-button">Get Started</a></div>
+			</nav>
+			<div class="wrap-cta-buttons">
+				<div class="cart-icon-wrap">
+					
+				</div>
+				{% if user.is_authenticated %}
+				<a href="{% url 'auth:logout' %}" class="sign-in-btn hide-mobile w-button">Log out</a>
+				{% else %}
+				
+				<a href="{% url 'account_login' %}" class="sign-in-btn hide-mobile w-button">Sign in</a>
+				{% endif %}
+				{% if user.is_authenticated %}
+				<a href="{% url 'home:dashboard' %}" class="primary-button-medium cta hide-mobile w-button">Dashboard</a>
+				{% else %}
+				<a href="{% url 'account_signup' %}" class="primary-button-medium cta hide-mobile w-button">Get Started</a>
+				{% endif %}
+			</div>
+			<div class="menu-button w-nav-button">
+				<div class="w-icon-nav-menu"></div>
+			</div>
+		</div>
+	</div>
+</div>

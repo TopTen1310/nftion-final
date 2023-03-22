@@ -1,0 +1,37 @@
+[
+{
+    "model": "home.nfttype",
+    "pk": 1,
+    "fields": {
+        "name": "PFPs"
+    }
+},
+{
+    "model": "home.nfttype",
+    "pk": 2,
+    "fields": {
+        "name": "Art"
+    }
+},
+{
+    "model": "home.nfttype",
+    "pk": 3,
+    "fields": {
+        "name": "General"
+    }
+},
+{
+    "model": "home.nfttype",
+    "pk": 4,
+    "fields": {
+        "name": "Music"
+    }
+},
+{
+    "model": "home.nfttype",
+    "pk": 5,
+    "fields": {
+        "name": "Virtual worlds"
+    }
+}
+]

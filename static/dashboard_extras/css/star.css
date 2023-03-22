@@ -1,0 +1,87 @@
+.star {
+  display: block;
+  position: relative;
+  padding: 5px;
+  background: #dededf;
+  transform: rotate(4deg);
+}
+.star.love-it {
+  background-color: #fca800;
+  transition-delay: 0.22s;
+  animation: animateStar 700ms linear;
+  animation-fill-mode: forwards;
+}
+.star.love-it .circle {
+  animation: animateCircle 700ms linear;
+  animation-fill-mode: forwards;
+  transform: rotate(159deg);
+}
+.star.love-it > .star-parts:before, .star.love-it > .star-parts:after {
+  transition-delay: 0.22s;
+  background-color: #fca800;
+}
+
+.star-parts {
+  display: block;
+  transform-origin: center;
+  width: 2px;
+}
+.star-parts:before, .star-parts:after {
+  content: "";
+  width: 5px;
+  height: 12px;
+  border-radius: 30px;
+  position: absolute;
+  background: #dededf;
+  transform-origin: bottom center;
+  
+  content: "";
+  width: 4px;
+  height: 13px;
+  border-radius: 5px;
+  position: absolute;
+  background: #dededf;
+  transform-origin: bottom center;
+}
+.star-parts:after {
+  transform: rotate(-15deg);
+  margin-right: -3px;
+  transform: rotate(7deg);
+  margin-left: 0px;
+  transform: rotate(342deg);
+  margin-right: -3px;
+}
+.star-parts:before {
+  transform: rotate(15deg);
+  margin-left: -3px;
+  transform: rotate(7deg);
+  margin-left: 0px;
+}
+.star-parts:nth-of-type(2) {
+  transform: rotate(36deg);
+}
+.star-parts:nth-of-type(3) {
+  transform: rotate(108deg);
+}
+.star-parts:nth-of-type(4) {
+  transform: rotate(180deg);
+}
+.star-parts:nth-of-type(5) {
+  transform: rotate(252deg);
+}
+.star-parts:nth-of-type(6) {
+  transform: rotate(324deg);
+}
+
+.circle {
+  border: 0px solid #fca800;
+  border-radius: 50%;
+  padding: 0px;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  z-index: 4;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+

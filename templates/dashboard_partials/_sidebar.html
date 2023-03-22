@@ -1,0 +1,73 @@
+{% load static %}
+
+
+<!-- <div data-collapse="medium" data-animation="over-left" data-duration="400" role="banner" class="sidebar-nav w-nav">
+	<nav role="navigation" class="dashboard-sidebar w-nav-menu">
+		<div class="sidebar-logo-section"><a href="/" aria-current="page" class="dashboard-logo w-nav-brand w--current"><img src="{% static 'img/imgs/logo.png' %}" width="98" alt="" class="sidebar-logo" /></a>
+			<div data-w-id="09e608d3-5d29-ea1c-8250-9e1401f1ec35" class="sidebar-collapse"><img src="https://assets.website-files.com/6022ffeab6f354c9aa1eb2a2/602337522c3ea56827425334_Collapse%20Icon.svg" loading="lazy" alt="" /></div>
+		</div>
+		<div class="sidebar-menu">
+			<div class="sidebar-menu-section bottom-divider">
+				<a href="{% url 'home:dashboard' %}" aria-current="page" class="sidebar-link w-inline-block w--current">
+					<i class='bx bxs-dashboard'></i>
+					<div class="sidebar-link-text">Dashboard</div>
+				</a>
+				<a href="{% url 'home:favorites' %}" aria-current="page" class="sidebar-link w-inline-block w--current">
+					<i class='bx bxs-star' ></i>
+					<div class="sidebar-link-text">Wishlist</div>
+				</a>
+				
+			</div>
+			<div class="sidebar-menu-section bottom-divider">
+				<a href="{% url 'home:profile' %}" class="sidebar-link w-inline-block">
+				<i class='bx bxs-user-account' ></i>
+					<div class="sidebar-link-text">My Account</div>
+				</a>
+				<a href="{% url 'home:settings' %}" class="sidebar-link w-inline-block">
+					<i class='bx bxs-cog' ></i>
+					<div class="sidebar-link-text">Settings</div>
+				</a>
+			</div>
+		</div>
+		<div class="sidebar-footer"><a href="{% url 'auth:logout' %}" class="sidebar-link w-inline-block">
+			<i class='bx bxs-log-out' ></i>
+				<div class="sidebar-link-text">Log Out</div>
+			</a></div>
+	</nav>
+	<div class="sidebar-button w-nav-button"><img src="https://assets.website-files.com/6022ffeab6f354c9aa1eb2a2/6024395e5a23d38bab1bbf77_Menu.svg" loading="lazy" width="22" alt="" /></div>
+</div> -->
+
+
+<div data-collapse="medium" data-animation="over-left" data-duration="400" role="banner" class="sidebar-nav w-nav">
+	<nav role="navigation" class="dashboard-sidebar w-nav-menu">
+		<div class="sidebar-logo-section"><a href="{% url 'home:home' %}" aria-current="page" class="dashboard-logo w-nav-brand w--current"><img src="{% static 'img/imgs/logo.png' %}" width="98" alt="" class="sidebar-logo" /></a>
+			<div data-w-id="09e608d3-5d29-ea1c-8250-9e1401f1ec35" class="sidebar-collapse"><img src="{% static 'img/602337522c3ea56827425334_Collapse Icon.svg' %}" loading="lazy" alt="" /></div>
+		</div>
+		<div class="sidebar-menu">
+			<div class="sidebar-menu-section bottom-divider"><a href="{% url 'home:dashboard' %}" aria-current="page" class="sidebar-link w-inline-block w--current"><img src="{% static 'img/602339a0e958300219cd1f1d_House.svg' %}" loading="lazy" width="27" alt="" class="sidebar-icon" />
+					<div class="sidebar-link-text">Dashboard</div>
+				</a>
+				<a href="{% url 'home:favorites' %}" class="sidebar-link w-inline-block"><img src="{% static 'img/602339a1038967373831278c_Note.svg' %}" loading="lazy" width="27" alt="" class="sidebar-icon" />
+					<div class="sidebar-link-text">Wishlist</div>
+				</a>
+				<a href="{% url 'home:profile' %}" class="sidebar-link w-inline-block">
+				<img src="{% static 'img/imgs/602339a13109a7d51194a232_Users.svg' %}" loading="lazy" width="27" alt="" class="sidebar-icon" />
+					<div class="sidebar-link-text">Profile</div>
+				</a>
+				
+			</div>
+			<div class="sidebar-menu-section bottom-divider">
+				<a href="{% url 'home:settings' %}" class="sidebar-link w-inline-block"><img src="{% static 'img/60262456b5cd8b76429bfafd_Cube.svg' %}" loading="lazy" width="27" alt="" class="sidebar-icon" />
+					<div class="sidebar-link-text">Settings</div>
+				</a>
+				<a href="{% url 'home:support' %}" class="sidebar-link w-inline-block"><img src="{% static 'img/602339a1c54adbe65e63f7a9_Chats.svg' %}" loading="lazy" width="27" alt="" class="sidebar-icon" />
+					<div class="sidebar-link-text">Support</div>
+				</a>
+				</div>
+		</div>
+		<div class="sidebar-footer"><a href="{% url 'auth:logout' %}" class="sidebar-link w-inline-block"><img src="{% static 'img/imgs/logout.svg' %}" loading="lazy" width="27" alt="" class="sidebar-icon" />
+				<div class="sidebar-link-text">Log out</div>
+			</a></div>
+	</nav>
+	<div class="sidebar-button w-nav-button"><img src="{% static 'img/6024395e5a23d38bab1bbf77_Menu.svg' %}" loading="lazy" width="22" alt="" /></div>
+</div>
